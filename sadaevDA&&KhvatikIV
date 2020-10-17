@@ -1,40 +1,10 @@
 #include <stdio.h>
 
 //Функция проверки числа на простоту
-int is_simple(int number)
-{
-  if(number > 1)
-  {
-    for(int i = 2; i < number; i++)
-    {
-      if(number % i == 0) 
-      {
-        return 0;
-      }
-    }
-
-    return 1;
-  }
-  else
-  {
-    printf("Число не натуральное и не простое \n");
-  }
-  
-  return 0;
-}
+int is_simple(int number);
 
 //Функция возведения числа в степень
-long power(long number, long degree) 
-{
-  long result = 1;
-
-  for(long i = 0; i < degree; i++) 
-  {
-    result *= number;
-  }
-
-  return result;
-}
+long get_power(long number, long degree);
 
 int main(void) {
   //FizzBuzz
@@ -59,4 +29,34 @@ int main(void) {
   }
 
   return 0;
+}
+
+int is_simple(int number)
+{
+  if(number > 1)
+  {
+    for(int i = 2; i < number; i++)
+    {
+      if(number % i == 0) 
+      {
+        return 0;
+      }
+    }
+
+    return 1;
+  }
+
+  return 0;
+}
+
+long get_power(long number, long degree) 
+{
+  long result = 1;
+
+  for(long i = 0; i < degree; i++) 
+  {
+    result *= number;
+  }
+
+  return result;
 }
